@@ -62,5 +62,6 @@ insert_sunday(
         "And the multitudes that went before, and that followed, cried, saying, Hosanna to the Son of David: "
         "Blessed is he that cometh in the name of the Lord; Hosanna in the highest."
     ),
-    gospel_ref="Matthew 21:1–9"
+    gospel_ref="Matthew 21:1–9",
+    liturgical_order=1
 )

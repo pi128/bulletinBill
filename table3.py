@@ -7,9 +7,10 @@ cur = conn.cursor()
 cur.execute("""
 CREATE TABLE IF NOT EXISTS calendar (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    name TEXT UNIQUE,
-    season TEXT
-)
+    name TEXT,
+    season TEXT,
+    liturgical_order INTEGER
+);
 """)
 
 cur.execute("""

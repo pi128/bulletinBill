@@ -8,13 +8,17 @@ def insert_sunday(
     first_lesson, first_ref,
     psalm, psalm_ref,
     second_lesson, second_ref,
-    gospel, gospel_ref
+    gospel, gospel_ref,
+    liturgical_order  
 ):
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
 
     # Insert or find the calendar record
-    cur.execute("INSERT OR IGNORE INTO calendar (name, season) VALUES (?, ?)", (name, season))
+    cur.execute(
+        "INSERT OR IGNORE INTO calendar (name, season, liturgical_order) VALUES (?, ?, ?)",
+        (name, season, liturgical_order)
+    )
     cur.execute("SELECT id FROM calendar WHERE name = ?", (name,))
     result = cur.fetchone()
     if not result:
